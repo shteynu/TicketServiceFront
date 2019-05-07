@@ -4,10 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {DataChangeObjectService} from './Services/data-change-object.service';
+import { HallsComponent } from './components/halls/halls.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HallsComponent
   ],
   imports: [
     BrowserModule, FormsModule,
