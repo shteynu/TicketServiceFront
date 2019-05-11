@@ -1,0 +1,18 @@
+.textArea{
+  width: 300px;
+}
+button{
+  margin: 0 2vh 0 0;
+  cursor: pointer;
+  left: 700px;
+}
+.mat-form-field{
+  left: 700px;
+  margin: 3vh 2vh 0 0;
+}
+
+.img{
+  position: relative;
+  margin-bottom: 1vh;
+  left: 700px;
+}
