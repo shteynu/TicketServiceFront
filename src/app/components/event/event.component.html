@@ -1,0 +1,61 @@
+<form [formGroup]="eventFG" (submit)="eventSubmit()">
+  <mat-form-field>
+    <mat-label>Event Name</mat-label>
+      <input matInput
+         [formControl]="nameFC"
+         placeholder="input event"
+         required>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>Artist Name</mat-label>
+      <input matInput
+           [formControl]="artistFC"
+           placeholder="input artist"
+           required>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <input matInput
+           [formControl]="dateFC"
+           [min]="minDate"
+           [matDatepicker]="myDatePicker"
+           placeholder="Choose Event Date"
+           required>
+    <mat-datepicker-toggle matSuffix [for]="myDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatePicker></mat-datepicker>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <input matInput
+           [formControl]="timeFC"
+           type="time"
+           placeholder="Time of event"
+           required>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>Choose event type</mat-label>
+    <mat-select required>
+      <mat-option *ngFor="let events of events" [value]="events.value">
+        {{events.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field class="textArea">
+    <mat-label>Description</mat-label>
+    <textarea cdkTextareaAutosize
+              cdkAutosizeMinRows="5"
+              cdkAutosizeMaxRows="5"
+              matInput placeholder="input description"
+              ></textarea>
+  </mat-form-field><br>
+
+    <img class="img" mat-card-image src="../../../assets/oreo-150x150.png" height="100" width="100"><br>
+
+
+  <button type="submit" mat-raised-button color="accent">Submit</button>
+  <button type="reset" mat-raised-button color="accent">Reset</button>
+
+</form>
