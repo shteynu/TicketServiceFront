@@ -1,0 +1,42 @@
+body, html, .container{
+  height: 100%;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: lightgray;
+}
+.mat-card-header{
+  justify-content: center;
+}
+.mat-form-field{
+  display: block !important;
+}
+
+.mat-card{
+  width: 40%;
+  margin: auto;
+  min-width: 270px;
+  max-width: 350px;
+}
+@media all and (width: 690px) {
+  .mat-card{
+    width: 100%;
+    height: 100%;
+  }
+}
+button{
+  margin: 0 1vw !important;
+}
+.mat-card-actions{
+  text-align: center;
+}
+.mat-card-footer{
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+.link-color{
+  color: lightblue;
+}
+

@@ -1,0 +1,57 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Sign up </mat-card-title>
+    </mat-card-header>
+    <mat-divider [ngStyle]="{'border-color': 'lightblue'}"></mat-divider>
+    <mat-card-content [ngStyle]="{'padding-top': '10px'}">
+      <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            type="text"
+            [formControlName]="'name'"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="email"
+            [formControlName]="'email'"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            [formControlName]="'password'"
+          >
+        </mat-form-field>
+          <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input
+              matInput
+             type="text"
+              [formControlName]="'phone'"
+            >
+        </mat-form-field>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!signUpForm.valid"
+          >Submit</button>
+          <button mat-raised-button color="warn" (click)="onFormReset()">Reset</button>
+          <button mat-raised-button color="primary">Cancel</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+    <mat-divider [ngStyle]="{'border-color': 'lightblue'}"></mat-divider>
+    <mat-card-footer><a class="link-color">Sign In!</a></mat-card-footer>
+  </mat-card>
+
+</div>
