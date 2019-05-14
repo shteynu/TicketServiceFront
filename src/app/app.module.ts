@@ -23,7 +23,7 @@ import {UrlsService} from './Services/urls.service';
   ],
   imports: [
     BrowserModule, FormsModule, BrowserAnimationsModule, HttpClientModule, MatDesighModule,
-    FormsModule, ReactiveFormsModule, HttpClientModule
+    FormsModule, ReactiveFormsModule
   ],
   providers: [DataChangeObjectService, HttpService,
     UrlsService],
