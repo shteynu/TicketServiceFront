@@ -5,15 +5,49 @@ import { Injectable } from '@angular/core';
 })
 export class DataChangeObjectService {
 
-  static firstVariable;
+  static seatNumber;
+  static rowNumber;
+  static seatNumberSelectedInformation;
+  static rowNumberSelectedInformation;
+  static price;
 
   constructor() { }
 
-  getFirstVariable() {
-    return DataChangeObjectService.firstVariable;
+  getSeatNumber() {
+    return DataChangeObjectService.seatNumber;
   }
 
-  setFirstVariable(value) {
-    DataChangeObjectService.firstVariable = value;
+  setSeatNumber(value) {
+    DataChangeObjectService.seatNumber = value;
+  }
+
+  getRowNumber() {
+    return DataChangeObjectService.rowNumber;
+  }
+
+  setRowNumber(value) {
+    DataChangeObjectService.rowNumber = value;
+  }
+
+  getSeatNumberSelectedInformation() {
+    return DataChangeObjectService.seatNumberSelectedInformation;
+  }
+
+  setSeatNumberSelectedInformation(value) {
+    DataChangeObjectService.seatNumberSelectedInformation = value;
+  }
+  getRowNumberSelectedInformation() {
+    return DataChangeObjectService.rowNumberSelectedInformation;
+  }
+
+  setRowNumberSelectedInformation(value) {
+    DataChangeObjectService.rowNumberSelectedInformation = value;
+  }
+  getPrice() {
+    return DataChangeObjectService.price;
+  }
+
+  setPrice(value) {
+    DataChangeObjectService.price = value;
   }
 }

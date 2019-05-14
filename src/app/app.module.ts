@@ -10,6 +10,8 @@ import { SeatComponent } from './Components/seat/seat.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {MatDesighModule} from './Modules/mat-desigh/mat-desigh.module';
+import {HttpService} from './Services/http.service';
+import {UrlsService} from './Services/urls.service';
 
 
 @NgModule({
@@ -21,9 +23,10 @@ import {MatDesighModule} from './Modules/mat-desigh/mat-desigh.module';
   ],
   imports: [
     BrowserModule, FormsModule, BrowserAnimationsModule, HttpClientModule, MatDesighModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule, HttpClientModule
   ],
-  providers: [DataChangeObjectService],
+  providers: [DataChangeObjectService, HttpService,
+    UrlsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
