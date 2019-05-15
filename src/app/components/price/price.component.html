@@ -9,9 +9,9 @@
 
   <mat-form-field>
     <mat-label>Choose seat type</mat-label>
-    <mat-select required>
-      <mat-option *ngFor="let seat of seatType" [value]="seat.value">
-        {{seat.value}}
+    <mat-select required [formControl]="val">
+      <mat-option *ngFor="let seat of seatType" [value]="seat.viewValue">
+        {{seat.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>

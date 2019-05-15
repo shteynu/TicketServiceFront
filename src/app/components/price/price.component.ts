@@ -14,14 +14,18 @@ export class PriceComponent implements OnInit {
 
   priceFC = new FormControl('',
     [Validators.required, ]);
+  val = new FormControl();
 
   seatType: SeatType[] = [
     {value: 'option-0', viewValue: 'Option 1'},
     {value: 'option-1', viewValue: 'Option 2'},
     {value: 'option-2', viewValue: 'Option 3'}
   ];
+
+
   priceFG = new FormGroup({
-    price: this.priceFC
+    price: this.priceFC,
+    seatT: this.val
   });
 
   constructor() { }
