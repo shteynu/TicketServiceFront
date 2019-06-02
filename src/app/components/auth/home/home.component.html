@@ -1,0 +1,42 @@
+<div *ngIf="!showSignUp">
+  <header class="main-header">
+
+    <div class="container">
+      <div class="logo">Ticket Service</div>
+      <app-login (onSignUpClicked)="onSignUpClicked()"></app-login>
+    </div>
+
+    <!--<form class="sign-in-form">-->
+    <!--<div class="form-group">-->
+    <!--<label>-->
+    <!--E-mail-->
+    <!--<input type="email">-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<label>-->
+    <!--Password-->
+    <!--<input type="password">-->
+    <!--</label>-->
+    <!--</div>-->
+    <!--<button type="submit">Ok</button>-->
+    <!--</form>-->
+
+  </header>
+  <section>
+    <div class="test">
+
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="icons-container">
+      <div class="icons">
+        <i class="fab fa-facebook blue icon-size" style="padding-right: 3px"></i>
+        <i class="fab fa-twitter-square deepskyblue icon-size" style="padding-right: 3px"></i>
+        <i class="fab fa-instagram instagram-color icon-size"></i>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<app-signup (signInClickedEmitter)="onSignInClicked()" *ngIf="showSignUp"></app-signup>
