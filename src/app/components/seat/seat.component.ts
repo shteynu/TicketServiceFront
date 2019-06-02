@@ -1,7 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import {DataChangeObjectService} from '../../Services/data-change-object.service';
 import {Subscription} from 'rxjs';
 import {HttpService} from '../../Services/http.service';
+
+
+/*export interface SeatType {
+  cheap;
+  medium;
+  expensive;
+}*/
 
 @Component({
   selector: 'app-seat',
@@ -10,28 +17,31 @@ import {HttpService} from '../../Services/http.service';
 })
 export class SeatComponent implements OnInit, OnDestroy {
 
-  number = this.dataExchange.getSeatNumber();
-  row = this.dataExchange.getRowNumber();
-  price = this.dataExchange.getPrice();
+  @Input() seat;
+  @Input() row;
+  price = this.dataExchange.getPriceInfo();
   selected;
   reserved;
   reservedSubscription: Subscription;
+  SeatType;
 
   constructor(private dataExchange: DataChangeObjectService,
               private http: HttpService) { }
 
   ngOnInit() {
-    this.number = 0;
+    /*console.log(this.seat);
+    console.log(this.row);*/
     this.selected = false;
     this.reserved = false;
-    this.sendReservedInfo(this.number, this.row);
+    this.sendReservedInfo(this.seat, this.row);
+
   }
 
   toggleColor() {
     this.selected = !this.selected;
-    this.dataExchange.setSeatNumberSelectedInformation(this.number);
+    this.dataExchange.setSeatNumberSelectedInformation(this.seat);
     this.dataExchange.setRowNumberSelectedInformation(this.row);
-    this.dataExchange.setPrice(this.price);
+   /* this.dataExchange.setPrice(this.price);*/
   }
 
   sendReservedInfo(seatNumber, rowNumber) {
@@ -42,6 +52,8 @@ export class SeatComponent implements OnInit, OnDestroy {
         (error) => console.log(error)
       );
   }
+
+
 
   ngOnDestroy() {
     if (this.reservedSubscription) {

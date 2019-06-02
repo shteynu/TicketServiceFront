@@ -1,3 +1,9 @@
-<p>
-  halls works!
-</p>
+<div class="seats">
+<table>
+  <tr *ngFor="let row of hallSeats">
+    <td *ngFor="let seat of row">
+      <app-seat [row]="row" [seat]="seat"></app-seat>
+    </td>
+  </tr>
+</table>
+</div>

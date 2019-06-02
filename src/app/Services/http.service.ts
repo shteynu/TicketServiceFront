@@ -12,4 +12,17 @@ export class HttpService {
   seatReserved(seatNumber, rowNumber) {
     return this.http.post(UrlsService.url + UrlsService.urlReserved, seatNumber, rowNumber);
   }
+
+  /*getPriceInfo() {
+    return this.http.get(UrlsService.url + UrlsService.urlGetPriceInfo,
+      {headers: {Authorization: localStorage.getItem('token')}});
+  }*/
+
+  sentPriceInfo(info) {
+    return this.http.post(UrlsService.url + UrlsService.urlSetPriceInform, info);
+  }
+
+  getHallInfo(eventName) {
+    return this.http.get(UrlsService.url + UrlsService.urlGetHallInfo, eventName);
+  }
 }

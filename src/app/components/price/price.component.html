@@ -5,6 +5,8 @@
            [formControl]="priceFC"
            placeholder="input price"
            required>
+   <!-- <mat-hint>valid price</mat-hint>
+    <mat-error>{{getPriceError()}}</mat-error>-->
   </mat-form-field><br>
 
   <mat-form-field>
@@ -14,7 +16,47 @@
         {{seat.viewValue}}
       </mat-option>
     </mat-select>
-  </mat-form-field>
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>RowBegin</mat-label>
+    <input matInput
+           [formControl]="rowBeginFC"
+           placeholder="input rowBegin"
+           required>
+   <!-- <mat-hint>valid rowBegin</mat-hint>
+    <mat-error>{{getRowBeginError()}}</mat-error>-->
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>RowEnd</mat-label>
+    <input matInput
+           [formControl]="rowEndFC"
+           placeholder="input rowEnd"
+           required>
+   <!-- <mat-hint>valid rowEnd</mat-hint>
+    <mat-error>{{getRowEndError()}}</mat-error>-->
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>ColomnBegin</mat-label>
+    <input matInput
+           [formControl]="columnBeginFC"
+           placeholder="input columnBegin"
+           required>
+   <!-- <mat-hint>valid columnBegin</mat-hint>
+    <mat-error>{{getColumnBeginError()}}</mat-error>-->
+  </mat-form-field><br>
+
+  <mat-form-field>
+    <mat-label>ColomnEnd</mat-label>
+    <input matInput
+           [formControl]="columnEndFC"
+           placeholder="input columnEnd"
+           required>
+ <!--   <mat-hint>valid columnEnd</mat-hint>
+    <mat-error>{{getColumnEndError()}}</mat-error>-->
+  </mat-form-field><br>
 
   <button type="submit" mat-raised-button color="accent">Submit</button>
   <button type="reset" mat-raised-button color="accent">Reset</button>

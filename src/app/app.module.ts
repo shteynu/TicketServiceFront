@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatDesighModule} from './Modules/mat-desigh/mat-desigh.module';
 import {HttpService} from './Services/http.service';
 import {UrlsService} from './Services/urls.service';
+import {DataExchangeSubjectService} from './Services/data-exchange-subject.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import {UrlsService} from './Services/urls.service';
     FormsModule, ReactiveFormsModule
   ],
   providers: [DataChangeObjectService, HttpService,
-    UrlsService],
+    UrlsService, DataExchangeSubjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

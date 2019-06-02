@@ -10,6 +10,7 @@ export class DataChangeObjectService {
   static seatNumberSelectedInformation;
   static rowNumberSelectedInformation;
   static price;
+  static eventName;
 
   constructor() { }
 
@@ -43,11 +44,19 @@ export class DataChangeObjectService {
   setRowNumberSelectedInformation(value) {
     DataChangeObjectService.rowNumberSelectedInformation = value;
   }
-  getPrice() {
+  getPriceInfo() {
     return DataChangeObjectService.price;
   }
 
-  setPrice(value) {
+  setPriceInfo(value) {
     DataChangeObjectService.price = value;
+  }
+
+  getEventName() {
+    return DataChangeObjectService.eventName;
+  }
+
+  setEventName(value) {
+    DataChangeObjectService.eventName = value;
   }
 }

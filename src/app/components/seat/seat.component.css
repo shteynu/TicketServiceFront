@@ -1,6 +1,7 @@
 .mat-card {
   width: 0.5vw;
   height: 0.5vh;
+
 }
 .p{
   background-color: deeppink;
@@ -8,4 +9,5 @@
 .b{
   background-color: blue;
 }
+
 
