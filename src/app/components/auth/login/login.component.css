@@ -1,0 +1,47 @@
+
+/*.container{*/
+  /*display: flex;*/
+  /*height: 70%;*/
+  /*justify-content: flex-end;*/
+/*}*/
+/*.mat-form-field{*/
+  /*display: inline-block!important;*/
+  /*border: 1px solid;*/
+/*}*/
+
+.mat-form-field{
+  margin-right: 15px;
+  display: inline-block;
+}
+.logo{
+  display: inline-block;
+}
+
+form{
+  display: inline-block;
+  width: calc(100% - 95px);
+  text-align: right;
+  margin-right: 100px;
+}
+
+.flex-container{
+  margin-right: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.mat-raised-button{
+  min-width: 32px;
+  min-height: 16px;
+  margin-right: 16px;
+  align-self: center;
+}
+
+.signup-link{
+  align-self: center;
+}
+
+.link-color{
+  color: #00b0ff;
+}

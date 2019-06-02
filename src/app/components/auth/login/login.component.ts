@@ -1,8 +1,9 @@
-import {Component,
-  OnInit,
+import {
+  Component, EventEmitter,
+  OnInit, Output,
 } from '@angular/core';
 
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   signInForm: FormGroup;
+  @Output('onSignUpClicked') signUpPressedEmmiter = new EventEmitter();
+
   ngOnInit() {
     this.signInForm = new FormGroup({
       email: new FormControl('',[Validators.required,
@@ -24,9 +27,15 @@ export class LoginComponent implements OnInit {
 
   onSignIn(){
     console.log(this.signInForm.value);
+    console.log(this.signInForm)
+
   }
 
   onFormReset(){
     this.signInForm.reset();
+  }
+
+  onSignUpClick(){
+    this.signUpPressedEmmiter.emit();
   }
 }

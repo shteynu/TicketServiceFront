@@ -1,41 +1,72 @@
-<div class="container">
-<mat-card>
-  <mat-card-header>
-    <mat-card-title> Sign in </mat-card-title>
-  </mat-card-header>
-  <mat-divider [ngStyle]="{'border-color': 'lightblue'}"></mat-divider>
-  <mat-card-content [ngStyle]="{'padding-top': '10px'}">
-    <form [formGroup]="signInForm" (ngSubmit)="onSignIn()">
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          type="email"
-          [formControlName]="'email'"
-        >
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input
-          matInput
-          type="password"
-          [formControlName]="'password'"
-        >
-      </mat-form-field>
-      <mat-card-actions>
+<!--<div class="container">-->
+<!--<mat-card>-->
+  <!--<mat-card-header>-->
+    <!--<mat-card-title> Sign in </mat-card-title>-->
+  <!--</mat-card-header>-->
+  <!--<mat-divider [ngStyle]="{'border-color': 'lightblue'}"></mat-divider>-->
+  <!--<mat-card-content [ngStyle]="{'padding-top': '10px'}">-->
+    <!--<form [formGroup]="signInForm" (ngSubmit)="onSignIn()">-->
+      <!--<mat-form-field>-->
+        <!--<mat-label>Email</mat-label>-->
+        <!--<input-->
+          <!--matInput-->
+          <!--type="email"-->
+          <!--[formControlName]="'email'"-->
+        <!--&gt;-->
+      <!--</mat-form-field>-->
+      <!--<mat-form-field>-->
+        <!--<mat-label>Password</mat-label>-->
+        <!--<input-->
+          <!--matInput-->
+          <!--type="password"-->
+          <!--[formControlName]="'password'"-->
+        <!--&gt;-->
+      <!--</mat-form-field>-->
+      <!--<mat-card-actions>-->
+        <!--<button-->
+          <!--mat-raised-button-->
+          <!--color="primary"-->
+          <!--type="submit"-->
+          <!--[disabled]="!signInForm.valid"-->
+        <!--&gt;Submit</button>-->
+        <!--<button mat-raised-button color="warn" (click)="onFormReset()">Reset</button>-->
+        <!--<button mat-raised-button color="primary">Cancel</button>-->
+      <!--</mat-card-actions>-->
+    <!--</form>-->
+  <!--</mat-card-content>-->
+  <!--<mat-divider [ngStyle]="{'border-color': 'lightblue'}"></mat-divider>-->
+  <!--<mat-card-footer>No Account? <a class="link-color">Sign Up!</a></mat-card-footer>-->
+<!--</mat-card>-->
+
+<!--</div>-->
+<!--<div class="logo">-->
+  <!--Ticket Service-->
+<!--</div>-->
+
+
+    <form>
+      <div class="flex-container">
+        <mat-form-field>
+          <mat-label>E-mail</mat-label>
+          <input type="email" matInput placeholder="E-mail">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="Password">
+        </mat-form-field>
+
         <button
           mat-raised-button
           color="primary"
           type="submit"
-          [disabled]="!signInForm.valid"
-        >Submit</button>
-        <button mat-raised-button color="warn" (click)="onFormReset()">Reset</button>
-        <button mat-raised-button color="primary">Cancel</button>
-      </mat-card-actions>
-    </form>
-  </mat-card-content>
-  <mat-divider [ngStyle]="{'border-color': 'lightblue'}"></mat-divider>
-  <mat-card-footer>No Account? <a class="link-color">Sign Up!</a></mat-card-footer>
-</mat-card>
+        >Ok</button>
+        <div class="signup-link"><a href="#" class="link-color" (click)="onSignUpClick()">Sign Up</a></div>
+      </div>
 
-</div>
+
+     <!--[disabled]="!signInForm.valid"-->
+    </form>
+
+
+
+
