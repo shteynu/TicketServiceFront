@@ -1,9 +1,23 @@
+<mat-grid-list cols="1" rowHeight="100px" gutterSize="5px">
+  <mat-grid-tile  [rowspan]="2" style="background-color: gray">
+    <mat-grid-tile-header style="height: 60px">
+      Выбор места в зале
+    </mat-grid-tile-header>
+  <mat-grid-tile-footer style="height: 140px">
+    Информация о мероприятии в зале
+  </mat-grid-tile-footer>
+  </mat-grid-tile>
+
+  <mat-grid-tile  [rowspan]="4" style="background-color: gray" >
 <div class="seats">
 <table>
   <tr *ngFor="let row of hallSeats">
-    <td *ngFor="let seat of row">
-      <app-seat [row]="row" [seat]="seat"></app-seat>
+    <td style="text-align-last: center">
+      <app-seat *ngFor="let seat of row" [row]="seat.row" [seat]="seat.seat" [price]="seat.price" [seatType]="seat.seatType"></app-seat>
     </td>
   </tr>
 </table>
 </div>
+  </mat-grid-tile>
+
+</mat-grid-list>

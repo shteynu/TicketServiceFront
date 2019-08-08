@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {HttpService} from '../../Services/http.service';
+import {DataChangeObjectService} from '../../Services/data-change-object.service';
 
 export interface SeatType {
   value: string;
@@ -13,7 +14,8 @@ export interface SeatType {
 })
 export class PriceComponent implements OnInit, OnDestroy {
 
-  eventName = new FormControl(); /*Here should be name of an event that created;*/
+  eventName: any = this.dataExchange.getEventName();
+  hallName: any = 'Main Hall'; /*this.dataExchange.getHallName();*/
 
   priceFC = new FormControl('',
     [Validators.required, ]);
@@ -37,13 +39,15 @@ export class PriceComponent implements OnInit, OnDestroy {
 
   priceFG = new FormGroup({
     event: this.eventName,
+    hall: this.hallName,
     price: this.priceFC,
     seatT: this.val,
     rowB: this.rowBeginFC,
     rowE: this.rowEndFC
   });
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService,
+              private dataExchange: DataChangeObjectService) { }
 
   ngOnInit() {
   }
@@ -57,19 +61,19 @@ export class PriceComponent implements OnInit, OnDestroy {
   }
 
   sendPriceInfo(info) {
-    this.priceSubscription = this.http.sentPriceInfo(info).subscribe(
+    /*this.priceSubscription = this.http.sentPriceInfo(info).subscribe(
       (result) => {
         localStorage.setItem('token', (result as any).token);
-        /*         console.log(localStorage.getItem('contact'));*/
-       /* this.util.refresh();
-        DataExchangeService.setPage('phonebook');*/
+        /!*         console.log(localStorage.getItem('contact'));*!/
+       /!* this.util.refresh();
+        DataExchangeService.setPage('phonebook');*!/
       },
       (error) => {
-      /*  console.log(error);
-        this.util.snack(error.error.message);*/
+      /!*  console.log(error);
+        this.util.snack(error.error.message);*!/
       }
     );
-    console.log(info);
+    console.log(info);*/
   }
 
   ngOnDestroy(): void {

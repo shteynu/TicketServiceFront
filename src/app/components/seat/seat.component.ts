@@ -15,33 +15,34 @@ import {HttpService} from '../../Services/http.service';
   templateUrl: './seat.component.html',
   styleUrls: ['./seat.component.css']
 })
-export class SeatComponent implements OnInit, OnDestroy {
+export class SeatComponent implements OnInit, OnDestroy  {
 
   @Input() seat;
   @Input() row;
-  price = this.dataExchange.getPriceInfo();
+  @Input() price;
+  @Input() seatType;
+
   selected;
   reserved;
   reservedSubscription: Subscription;
-  SeatType;
+  best = false;
+  theBest = false;
+
 
   constructor(private dataExchange: DataChangeObjectService,
               private http: HttpService) { }
 
   ngOnInit() {
-    /*console.log(this.seat);
-    console.log(this.row);*/
     this.selected = false;
     this.reserved = false;
+    this.seatTypeDefenitionColor();
     this.sendReservedInfo(this.seat, this.row);
-
   }
 
   toggleColor() {
     this.selected = !this.selected;
     this.dataExchange.setSeatNumberSelectedInformation(this.seat);
     this.dataExchange.setRowNumberSelectedInformation(this.row);
-   /* this.dataExchange.setPrice(this.price);*/
   }
 
   sendReservedInfo(seatNumber, rowNumber) {
@@ -53,6 +54,13 @@ export class SeatComponent implements OnInit, OnDestroy {
       );
   }
 
+  seatTypeDefenitionColor() {
+    if (this.seatType === 'the best') {
+      this.theBest = !this.theBest;
+    } else if (this.seatType === 'best') {
+      this.best = !this.best;
+    }
+  }
 
 
   ngOnDestroy() {

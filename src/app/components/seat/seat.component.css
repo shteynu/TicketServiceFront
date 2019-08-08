@@ -1,13 +1,28 @@
 .mat-card {
-  width: 0.5vw;
-  height: 0.5vh;
+  width: 0.001vw;
+  height: 0.001vh;
 
+  background-color: darkgray;
+
+}
+.container{
+  width: 0.1vw;
+  height: 0.1vh;
 }
 .p{
   background-color: deeppink;
 }
 .b{
   background-color: blue;
+}
+.best{
+  border-color: blue;
+  border-bottom-style: solid;
+}
+.theBest{
+  border-color: red;
+  border-bottom-style: solid;
+
 }
 
 

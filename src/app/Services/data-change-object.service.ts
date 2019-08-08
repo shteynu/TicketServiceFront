@@ -5,30 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class DataChangeObjectService {
 
-  static seatNumber;
-  static rowNumber;
+
   static seatNumberSelectedInformation;
   static rowNumberSelectedInformation;
-  static price;
+  static hallInformation = [{}];
+  static page = 'mainPage';
   static eventName;
+  static hallName;
 
   constructor() { }
 
-  getSeatNumber() {
-    return DataChangeObjectService.seatNumber;
-  }
-
-  setSeatNumber(value) {
-    DataChangeObjectService.seatNumber = value;
-  }
-
-  getRowNumber() {
-    return DataChangeObjectService.rowNumber;
-  }
-
-  setRowNumber(value) {
-    DataChangeObjectService.rowNumber = value;
-  }
 
   getSeatNumberSelectedInformation() {
     return DataChangeObjectService.seatNumberSelectedInformation;
@@ -37,19 +23,22 @@ export class DataChangeObjectService {
   setSeatNumberSelectedInformation(value) {
     DataChangeObjectService.seatNumberSelectedInformation = value;
   }
-  getRowNumberSelectedInformation() {
+
+   getRowNumberSelectedInformation() {
     return DataChangeObjectService.rowNumberSelectedInformation;
   }
 
   setRowNumberSelectedInformation(value) {
     DataChangeObjectService.rowNumberSelectedInformation = value;
   }
-  getPriceInfo() {
-    return DataChangeObjectService.price;
+
+
+  getPage() {
+    return DataChangeObjectService.page;
   }
 
-  setPriceInfo(value) {
-    DataChangeObjectService.price = value;
+  setPage(value) {
+    DataChangeObjectService.page = value;
   }
 
   getEventName() {
@@ -58,5 +47,21 @@ export class DataChangeObjectService {
 
   setEventName(value) {
     DataChangeObjectService.eventName = value;
+  }
+
+   getEventHall() {
+    return DataChangeObjectService.hallInformation;
+  }
+
+  setEventHall(value) {
+    DataChangeObjectService.hallInformation = value;
+  }
+
+  getHallName() {
+    return DataChangeObjectService.hallName;
+  }
+
+  setHallName(value) {
+    DataChangeObjectService.hallName = value;
   }
 }

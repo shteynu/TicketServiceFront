@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataChangeObjectService} from '../../Services/data-change-object.service';
 import {HttpService} from '../../Services/http.service';
+import {pipe} from 'rxjs';
 
 
 class EventObject {
@@ -23,30 +24,46 @@ class EventObject {
 export class HallsComponent implements OnInit {
 
    hallSeats: any [] = [
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-    [1, 2, 3, 4, 5, 6, 7, 8, 9],
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      [1, 2, 3, 4, 5, 6, ],
-
+    [{row: 1, seat: 1, price: 21, seatType: 'the best'},
+      {row: 1, seat: 2, price: 21, seatType: 'the best'},
+      {row: 1, seat: 4, price: 21, seatType: 'the best'},
+      {row: 1, seat: 4, price: 21, seatType: 'the best'},
+      {row: 1, seat: 5, price: 21, seatType: 'the best'},
+      {row: 1, seat: 6, price: 21, seatType: 'the best'},
+      {row: 1, seat: 7, price: 21, seatType: 'the best'},
+      {row: 1, seat: 8, price: 21, seatType: 'the best'},
+      {row: 1, seat: 9, price: 21, seatType: 'the best'},
+      {row: 1, seat: 10, price: 21, seatType: 'the best'}],
+    [{row: 2, seat: 1, price: 34, seatType: 'best'},
+      {row: 2, seat: 2, price: 34, seatType: 'best'},
+      {row: 2, seat: 3, price: 34, seatType: 'best'},
+      {row: 2, seat: 4, price: 34, seatType: 'best'},
+      {row: 2, seat: 5, price: 34, seatType: 'best'},
+      {row: 2, seat: 6, price: 34, seatType: 'best'},
+      {row: 2, seat: 7, price: 34, seatType: 'best'},
+      {row: 2, seat: 8, price: 34, seatType: 'best'},
+      {row: 2, seat: 9, price: 34, seatType: 'best'}]
     ];
-  /*  row;
-    seat;*/
+
+    eventHall = this.dataExchange.getEventHall();
     eventName = this.dataExchange.getEventName();
-    eventObj: EventObject = new EventObject('', 0, 0, '', 0);
+
 
     constructor(private dataExchange: DataChangeObjectService,
-                private http: HttpService) {
-
-  }
+                private http: HttpService) {}
 
     ngOnInit() {
       this.getHallInfo(this.eventName);
-
     }
 
     getHallInfo(eventName) {
-      this.http.getHallInfo(eventName).subscribe((res: any) => this.eventObj = res);
-    }
+    this.http.getHallInfo(eventName);
+  }
+
+  getUserData() {
+
+
+  }
 
 
 }
